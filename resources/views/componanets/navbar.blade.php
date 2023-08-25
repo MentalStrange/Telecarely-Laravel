@@ -6,32 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telecarely</title>
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="{{ asset('fontawasome/fontawasome.css') }}">
-    <!-- bootstrap cdn link  -->
-    <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.css') }}">
-    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 </head>
 
 <body>
-    <header class="header fixed-top">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <!-- <img src="images/telecarely.png" alt=""> -->
-                <a href="/" class="logo">TELE<span>Carely.</span></a>
-                <nav class="nav">
-                    <a href="/">home</a>
-                    <a href="#about">about</a>
-                    <a href="#reviews">reviews</a>
-                    <!-- <a href="#contact">contact</a> -->
-                </nav>
-                <a style=" margin-right: -230px;font-size: 1.7rem; color: var(--blue);" href="/login">Login</a>
-                <a style=" font-size: 1.7rem; color: var(--blue);" href="/signup">Sing Up</a>
-                <div id="menu-btn" class="fas fa-bars"></div>
-            </div>
+    <header class="header-area">
+        <div class="logo">
+            <a href="{{ route('/') }}"><img src="{{ asset('images/telecarely2.png') }}" alt=""></a>
         </div>
+        @if (!session('loggedIn'))
+            <ul class="links">
+                <li><a href="{{route('/')}}" class="{{Request::is('/') ? 'active' : ""}}">Home</a></li>
+                <li><a href="#about" class="{{Request::is('/#about') ? 'active' :"" }}" >About</a></li>
+                <li><a href="#service" class="{{Request::is('#service') ? 'active':"" }}">Service</a></li>
+                <li><a href="#contact" class="{{Request::is('#contact') ? 'active' :"" }}"> Contact</a></li>
+                <li>
+                    <span class="login-signup">
+                        <li> <a href="/login" class="{{Request::is('login') ? 'active' :"" }}"> Login</a>
+                        <li> <a href="/signup" class="{{Request::is('signup') ? 'active':"" }}" >Sing Up</a></li>
+                    </span>
+                </li>
+            </ul>
+        @elseif(session('loggedIn'))
+            <ul class="links">
+                <li><a href="{{route('/')}}" class="{Request::is('/') ? 'active' :  ' ' }}">Home</a></li>
+                <li><a href="{{ session('user')->role == 'doctor' ? route('doctor') : route('patient') }}" class= "{{Request::is('signup') ? 'active': " "}}"  >Dashboard</a>
+                </li>
+                <li><a href="{{ route('logout') }}">Logout</a></li>
+            </ul>
+        @endif
     </header>
 
 </html>

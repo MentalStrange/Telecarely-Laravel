@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('fontawasome/fontawasome.css') }}">
 
     <!-- bootstrap cdn link  -->
-    {{-- <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.css') }}">
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">

@@ -104,4 +104,11 @@ class UsersController extends Controller
             return redirect('/doctor')->with(['success' => 'Welcom Doctor']);
         }
     }
+
+    // logout function
+    function logout()
+    {
+        session()->invalidate();
+        return to_route('/');
+    }
 }

@@ -1,0 +1,47 @@
+*{
+    font-weight: bold;
+}
+.header-area {
+    z-index: 20000;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+}
+.header-area .logo img{
+    width: 300px;
+}
+.header-area .links {
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 25px;
+    margin: 0;
+}
+.header-area .links li {
+    display: inline-block;
+}
+.header-area .links a {
+    color: #00b8b8;
+    text-decoration: none;
+    margin-left: 14px;
+    font-size: 20px;
+    transition: 0.4s;
+}
+.header-area .links a:hover,
+.header-area .links a.active {
+    color: var(--main-color);
+}
+
+.login-signup{
+    text-align: end !important;
+    margin-right: 100px;
+}
+.login-signup a:hover{
+    background-color: rgb(37, 123, 181) !important;
+}
+
