@@ -31,8 +31,13 @@
             </ul>
         @elseif(session('loggedIn'))
             <ul class="links">
-                <li><a href="{{route('/')}}" class="{Request::is('/') ? 'active' :  ' ' }}">Home</a></li>
-                <li><a href="{{ session('user')->role == 'doctor' ? route('doctor') : route('patient') }}" class= "{{Request::is('signup') ? 'active': " "}}"  >Dashboard</a>
+                <li>
+                    <a href="{{route('/')}}" class="{{Request::is('/') ? 'active' :"" }}">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ session('user')->role == 'doctor' ? route('doctor') : route('patient') }}" class="{{!Request::is('/') ? 'active' :"" }}"> Dashboard</a>
                 </li>
                 <li><a href="{{ route('logout') }}">Logout</a></li>
             </ul>

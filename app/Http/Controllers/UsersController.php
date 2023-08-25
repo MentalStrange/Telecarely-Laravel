@@ -42,8 +42,8 @@ class UsersController extends Controller
                     'loggedIn' => true,
                     'user' => $user
                 ]);
-                if ($user->role === NULL) {
-                    return redirect('/patient')->with(['success' => 'Welcome User']);
+                if ($user->specialty === NULL) {
+                    return to_route('patient')->with(['success' => 'Welcome User']);
                 } else {
                     return to_route('doctor')->with(['success' => 'Welcom Doctor']);
                 }
@@ -98,10 +98,10 @@ class UsersController extends Controller
                 'user' => $user,
             ]);
         }
-        if ($role === NULL) {
-            return redirect('/patient')->with(['success' => 'Welcome User']);
+        if ($specialty === NULL) {
+            return to_route('patient')->with(['success' => 'Welcome User']);
         } else {
-            return redirect('/doctor')->with(['success' => 'Welcom Doctor']);
+            return to_route('doctor')->with(['success' => 'Welcom Doctor']);
         }
     }
 

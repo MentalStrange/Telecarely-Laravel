@@ -4,6 +4,8 @@
 <head>
     <title>Sign Up</title>
     <link rel="stylesheet" href="{{ asset('css/signup.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+
 </head>
 
 <body>
@@ -13,13 +15,13 @@
         <form action="/signup" method="post" class="display-6">
             @csrf
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
+            <input type="text" id="name" name="name" required value="{{old('name')}}"/>
             @error('name')
                 <p>{{ $message }}</p>
             @enderror
 
             <label for="email">Email</label>
-            <input type="text" id="email" name="email" required />
+            <input type="text" id="email" name="email" required value="{{old('email')}}" />
             @error('email')
                 <p>{{ $message }}</p>
             @enderror
@@ -40,25 +42,27 @@
                 <option value="nurse">Nurse</option>
             </select>
 
-            <div id="doctor-nurse" hidden disabled>
+            <div id="doctor-nurse">
                 <label for="specialty">Specialization</label>
-                <input type="text" id="specialty" name="specialty" class=" d-block container" />
+                <br>
+                <br>
+                <input type="text" id="specialty" name="specialty" value="{{old('specialty')}}" />
             </div>
 
             <label for="age">Age</label>
-            <input type="number" id="age" name="age" required />
+            <input type="number" id="age" name="age" required value="{{old('age')}}" />
             @error('age')
                 <p>{{ $message }}</p>
             @enderror
 
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" required />
+            <input type="tel" id="phone" name="phone" required value="{{old('phone')}}" />
             @error('phone')
                 <p>{{ $message }}</p>
             @enderror
 
             <label for="profile_pic">Profile Picture</label>
-            <input type="file" id="profile_pic" name="image" accept="image/*" required>
+            <input type="file" id="profile_pic" name="image" accept="image/*" required value="{{old('image')}}" />
             <button type="submit">Sign Up</button>
             <button type="reset">Reset</button>
 

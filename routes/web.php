@@ -25,4 +25,6 @@ Route::get('/doctor/dashboard', [DoctorController::class, 'showDashboard'])->nam
 Route::get('patient/dashboard', [PatientController::class, 'showDashboard'])->name('patient');
 
 // logout function
-Route::get('logout', [UsersController::class, 'logout'])->name('logout');
+Route::get('logout',
+    [UsersController::class, 'logout']
+)->name('logout');

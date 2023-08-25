@@ -45,47 +45,17 @@ label {
 }
 
 input,
-select {
+select,
+#specialty {
     padding: 10px;
     margin-bottom: 20px;
     border: none;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
-.next_btn {
-    background-color: var(--blue);
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    font-size: 15px;
-}
-
-.next_btn:hover {
-    background-color: var(--light-color);
-    color: white;
-}
-button[type="reset"] {
-    background-color: var(--blue);
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-}
-
-button[type="reset"]:hover {
-    background-color: var(--light-color);
-}
+button[type="reset"],
 button[type="submit"] {
     background-color: var(--blue);
     color: #fff;
@@ -97,6 +67,7 @@ button[type="submit"] {
     margin-top: 10px;
 }
 
+button[type="reset"]:hover,
 button[type="submit"]:hover {
     background-color: var(--light-color);
 }

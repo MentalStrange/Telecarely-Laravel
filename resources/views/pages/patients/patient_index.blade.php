@@ -5,6 +5,8 @@
     <title>Patient</title>
     <link rel="stylesheet" href="../css/patient_profile.css"> <!-- Link to the CSS file -->
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.css') }}">
+
 </head>
 
 <body>
@@ -74,7 +76,7 @@
     <!-- end the dashbord of the patient -->
     <!-- ********************************* -->
 
-
+@include('sweetalert::alert')
 </body>
 
 </html>
