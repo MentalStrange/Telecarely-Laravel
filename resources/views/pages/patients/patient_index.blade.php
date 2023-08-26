@@ -13,18 +13,17 @@
     @include('componanets.navbar')
     <div class="menu">
         <div class="doctor-profile">
-            <img src="../images/pic-1.png" alt="Doctor Image">
+            <img src="{{asset(session('user')->image)}}" alt="Doctor Image" class="w-100 rounded-full">
             <h2>
-                <h2>patient name</h2>
+                <h2> {{session('user')->name}} </h2>
 
             </h2>
         </div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="all_doctors.php">All Doctors</a></li>
-            <li><a href="pre_index.php">Your Prescriptions</a></li>
-            <li><a href="../logout.php">logout</a></li>
-
+            <li><a href="{{ route('/') }}">Home</a></li>
+            <li><a href="{{ route('Doctors') }}">All Doctors</a></li>
+            <li><a href="{{route('prescription')}}">Your Prescriptions</a></li>
+            <li><a href="{{route('logout')}}">logout</a></li>
         </ul>
     </div>
     <div class="main-section">
@@ -32,9 +31,12 @@
             <div class="center-container">
                 <h3>Welcome!</h3>
                 <h1>
-                    <h2>patient name</h2>
+                    <span>
+                        {{session('user')->name}}
+                    </span>
                 </h1>
-                <h3>Channel a Doctor Here</h3>
+
+                {{-- <h3>Channel a Doctor Here</h3>
                 <form class="search-form" action="patient_Index.php" method="get">
                     <input type="search" name="search_for" class="input-text"
                         placeholder="Search Doctor and We will Find The Session Available">
@@ -42,7 +44,8 @@
                 </form>
                 <table>
                     <tr>doctor name</tr>
-                </table>
+                </table> --}}
+
             </div>
     </div>
 

@@ -23,6 +23,8 @@ Route::get('/doctor/dashboard', [DoctorController::class, 'showDashboard'])->nam
 
 // patient pages
 Route::get('patient/dashboard', [PatientController::class, 'showDashboard'])->name('patient');
+Route::get('patient/allDoctors', [PatientController::class, 'showAllDoctors'])->name('Doctors');
+Route::get('patient/prescription', [PatientController::class, 'showPrescription'])->name('prescription');
 
 // logout function
 Route::get('logout',
