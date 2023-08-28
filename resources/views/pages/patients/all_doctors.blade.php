@@ -32,7 +32,7 @@
                             Email: {{ $doctor->email }}<br>Phone: {{ $doctor->phone }}
                         </td>
                         <td>
-                            <a href="cardiology.html">
+                            <a href="{{route('showInquiry',['id'=> $doctor->id])}}">
                                 <button class="inquiry" style="width:200px;">
                                     Send Now
                                 </button>

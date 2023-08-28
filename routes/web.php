@@ -21,11 +21,15 @@ Route::post('/signup', [UsersController::class, 'signup']);
 // doctor pages
 Route::get('/doctor/dashboard', [DoctorController::class, 'showDashboard'])->name('doctor');
 Route::get('/doctor/patient', [DoctorController::class, 'showPatient'])->name('patients');
+Route::get('/doctor/patient/{patientId}', [DoctorController::class, 'showPatientPrescription'])->name('showPatientPrescription');
+Route::post('/doctor/patient', [DoctorController::class, 'sendPrescription'])->name('sendPrescription');
 
 // patient pages
 Route::get('patient/dashboard', [PatientController::class, 'showDashboard'])->name('patient');
 Route::get('patient/allDoctors', [PatientController::class, 'showAllDoctors'])->name('Doctors');
 Route::get('patient/prescription', [PatientController::class, 'showPrescription'])->name('prescription');
+Route::get('patient/allDoctors/{id}', [PatientController::class, 'showInquiry'])->name('showInquiry');
+Route::post('patient/allDoctors', [PatientController::class, 'inquiry'])->name('inquiry');
 
 // logout function
 Route::get(

@@ -13,6 +13,8 @@
     @yield('login.css')
     @yield('doc_index.css')
     @yield('doctor_patient.css')
+    @yield('inquiry.css')
+    @yield('write_prescription.css')
 </head>
 
 <body>
@@ -53,6 +55,7 @@
     </main>
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
+    @include('sweetalert::alert')
 </body>
 
 </html>

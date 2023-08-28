@@ -2,8 +2,8 @@
 @extends('pages.doctors.doctor-main-templete')
 @section('doctor_patient.css')
     <title>Patient Information</title>
-    <link rel="stylesheet" type="text/css" href="../css/all_doctor.css">
-    <link rel="stylesheet" type="text/css" href="../css/patient_profile.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/all_doctor.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/patient_profile.css')}}">
 @endsection
 @section('doctor-content')
 @section('content')
@@ -23,6 +23,13 @@
                     <tr>
                         <td>{{ $patient->patient_id }}</td>
                         <td> {{ $patient->message }}</td>
+                        <td>
+                            <a href="{{route('showPatientPrescription',["patientId"=>$patient->patient_id])}}">
+                                <button>
+                                    Send
+                                </button>
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

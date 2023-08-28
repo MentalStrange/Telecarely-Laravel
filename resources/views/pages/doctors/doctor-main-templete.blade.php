@@ -1,5 +1,6 @@
 <head>
     <title>Doctor</title>
+        <link rel="stylesheet" href="{{asset('css/patient_profile.css')}}">
 </head>
 
 <body>
