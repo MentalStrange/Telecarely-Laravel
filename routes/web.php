@@ -10,7 +10,7 @@ Route::get('/', function () {
     return view('pages/index');
 })->name('/');
 // guest pages
-Route::get('/login', [UsersController::class, 'showLogin']);
+Route::get('/login', [UsersController::class, 'showLogin'])->name('showLogin');
 Route::get('/signup', [UsersController::class, 'showSignUp']);
 
 
@@ -20,6 +20,7 @@ Route::post('/signup', [UsersController::class, 'signup']);
 
 // doctor pages
 Route::get('/doctor/dashboard', [DoctorController::class, 'showDashboard'])->name('doctor');
+Route::get('/doctor/patient', [DoctorController::class, 'showPatient'])->name('patients');
 
 // patient pages
 Route::get('patient/dashboard', [PatientController::class, 'showDashboard'])->name('patient');
@@ -27,6 +28,7 @@ Route::get('patient/allDoctors', [PatientController::class, 'showAllDoctors'])->
 Route::get('patient/prescription', [PatientController::class, 'showPrescription'])->name('prescription');
 
 // logout function
-Route::get('logout',
+Route::get(
+    'logout',
     [UsersController::class, 'logout']
 )->name('logout');

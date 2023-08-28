@@ -34,7 +34,6 @@ class PatientController extends Controller
                 'error' => 'Prescription Not found',
             ]);
         } else {
-            // return dd($results);
             return view('pages.patients.patient_prescription')->with('prescriptions', $results);
         }
     }

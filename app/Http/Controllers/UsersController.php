@@ -19,7 +19,7 @@ class UsersController extends Controller
     }
 
     //------------------
-    //login verfication
+    //login verification
     //------------------
     function login(Request $request)
     {
@@ -31,7 +31,7 @@ class UsersController extends Controller
         ]);
         $result = DB::select('SELECT * from users WHERE email = ?', [$email]);
         if (empty($result)) {
-            return redirect('/signup')->with(['error' => 'Your Email is Not Exitst']);
+            return redirect('/signup')->with(['error' => 'Your Email is Not Exists']);
         } else {
             $user = $result[0];
             if (!Hash::check($password, $user->password)) {
@@ -45,13 +45,13 @@ class UsersController extends Controller
                 if ($user->specialty === NULL) {
                     return to_route('patient')->with(['success' => 'Welcome User']);
                 } else {
-                    return to_route('doctor')->with(['success' => 'Welcom Doctor']);
+                    return to_route('doctor')->with(['success' => 'Welcome Doctor']);
                 }
             }
         }
     }
     //------------------
-    //signup verfication
+    //signup verification
     //------------------
     function signup(Request $request)
     {
@@ -91,7 +91,7 @@ class UsersController extends Controller
         $result = DB::getPdo()->lastInsertId();
         $user = $result[0];
         if (empty($user)) {
-            return redirect('/signup')->with(['error' => 'there is error happened in regestiration try agin'])->withInput();
+            return redirect('/signup')->with(['error' => 'there is error happened in registration try agin'])->withInput();
         } else {
             session([
                 'isLoggedIn' => 'true',
@@ -101,7 +101,7 @@ class UsersController extends Controller
         if ($specialty === NULL) {
             return to_route('patient')->with(['success' => 'Welcome User']);
         } else {
-            return to_route('doctor')->with(['success' => 'Welcom Doctor']);
+            return to_route('doctor')->with(['success' => 'Welcome Doctor']);
         }
     }
 

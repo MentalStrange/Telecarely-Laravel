@@ -1,6 +1,3 @@
-*{
-    font-weight: bold;
-}
 .header-area {
     z-index: 20000;
     position: sticky;
@@ -9,9 +6,8 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-
 }
-.header-area .logo img{
+.header-area .logo img {
     width: 300px;
 }
 .header-area .links {
@@ -37,11 +33,10 @@
     color: var(--main-color);
 }
 
-.login-signup{
+.login-signup {
     text-align: end !important;
     margin-right: 100px;
 }
-.login-signup a:hover{
+.login-signup a:hover {
     background-color: rgb(37, 123, 181) !important;
 }
-
