@@ -18,7 +18,7 @@
                         Find your doctor online Book as you wish with eDoc. <br />
                         We offer you a free doctor channeling service, Make your
                         appointment now.</p>
-                    <a href="/signup" class="link-btn">Start your examination now</a>
+                    <a href="{{route('signup')}}" class="link-btn">Start your examination now</a>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cupiditate vero in provident
                         ducimus. Totam quas labore mollitia cum nisi, sint, expedita rem error ipsa, nesciunt ab
                         provident. Aperiam, officiis!</p>
-                    <a href="signup.php" class="link-btn">Start your examination now</a>
+                    <a href="{{route('signup')}}" class="link-btn">Start your examination now</a>
                 </div>
             </div>
         </div>

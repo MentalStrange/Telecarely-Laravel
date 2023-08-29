@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="shortcut icon" href="{{asset('images/telecarely.png')}}" type="image/x-icon">
     @yield('index.css')
     @yield('signup.css')
     @yield('all_doctors.css')
