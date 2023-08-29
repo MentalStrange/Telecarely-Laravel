@@ -14,7 +14,7 @@
                     <h2 style="margin: 20px">Prescription</h2>
                     <tr>
                         <th>Doctor Name </th>
-                        <td>{{ $prescription->doctor_id }}</td>
+                        <td>{{ session('doctorNames')[$loop->index] }}</td>
                     </tr>
                     <tr>
                         <th>Drug Name </th>

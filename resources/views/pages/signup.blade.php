@@ -7,7 +7,7 @@
     <body>
         <div class="signup-container ">
             <h1>Sign Up</h1>
-            <form action="/signup" method="post" class="display-6">
+            <form action="{{route('signup')}}" method="post" class="display-6">
                 @csrf
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required value="{{ old('name') }}" />

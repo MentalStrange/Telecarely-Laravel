@@ -21,7 +21,7 @@
             <tbody>
                 @foreach ($patients as $patient)
                     <tr>
-                        <td>{{ $patient->patient_id }}</td>
+                        <td>{{ session('patientNames')[$loop->index] }}</td>
                         <td> {{ $patient->message }}</td>
                         <td>
                             <a href="{{route('showPatientPrescription',["patientId"=>$patient->patient_id])}}">

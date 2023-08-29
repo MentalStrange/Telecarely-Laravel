@@ -99,9 +99,9 @@ class UsersController extends Controller
             ]);
         }
         if ($specialty === NULL) {
-            return to_route('patient')->with(['success' => 'Welcome User']);
+            return to_route('login')->with(['success' => 'You registered successfully']);
         } else {
-            return to_route('doctor')->with(['success' => 'Welcome Doctor']);
+            return to_route('login')->with(['success' => 'You registered successfully']);
         }
     }
 

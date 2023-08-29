@@ -3,7 +3,6 @@
 @section('index.css')
     <title>Telecarely</title>
     <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.css') }}">
-    <!-- custom css file link  -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
 @section('content')

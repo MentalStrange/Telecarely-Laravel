@@ -9,9 +9,22 @@ class PatientController extends Controller
 {
     function showDashboard()
     {
+        $patientCount = DB::select('SELECT COUNT(id) as patientCount FROM users WHERE role = ? ', ['patient']);
+        if (!empty($patientCount)) {
+            session([
+                'patientCount' => $patientCount[0]->patientCount
+            ]);
+        }
+        // select number of doctor
+        $prescriptionsCount = DB::select('SELECT COUNT(id) as prescriptionCount FROM prescriptions where patient_id = ? ', [session('user')->id]);
+        if (!empty($prescriptionsCount)) {
+            session([
+                'prescriptionCount' => $prescriptionsCount[0]->prescriptionCount
+            ]);
+        }
         return view('pages.patients.patient_index');
     }
-    // show all doctores for patient....
+    // show all doctors for patient....
     function showAllDoctors()
     {
         $results = DB::select('SELECT `id`,`name`, `specialty`, `email`, `phone` FROM USERS WHERE role = ?', ['doctor']);
@@ -29,11 +42,24 @@ class PatientController extends Controller
     {
         $results = DB::select('SELECT * FROM prescriptions WHERE patient_id = ?', [session('user')->id]);
 
+        $doctorIds = [];
+        foreach ($results as $result) {
+            $doctorIds[] = $result->doctor_id;
+        }
+
+        $doctorNames = [];
+        foreach ($doctorIds as $doctorId) {
+            $doctor = DB::select('SELECT * FROM users WHERE id = ?', [$doctorId]);
+            $doctorNames[] = $doctor[0]->name;
+        }
         if (empty($results)) {
             return back()->with([
                 'error' => 'Prescription Not found',
             ]);
         } else {
+            session([
+                'doctorNames' => $doctorNames,
+            ]);
             return view('pages.patients.patient_prescription')->with('prescriptions', $results);
         }
     }

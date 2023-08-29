@@ -28,19 +28,15 @@
             </div>
             <div class="dashboard-items">
                 <div class="dashboard-item">
-                    <div class="dashboard-item-number"></div>
+                    <div class="dashboard-item-number">{{session('doctorCount')}}</div>
                     <div class="dashboard-item-label">All Doctors</div>
                 </div>
                 <div class="dashboard-item">
-                    <div class="dashboard-item-number"></div>
+                    <div class="dashboard-item-number">{{session('patientCount')}}</div>
                     <div class="dashboard-item-label">All Patients</div>
                 </div>
                 <div class="dashboard-item">
-                    <div class="dashboard-item-number">0</div>
-                    <div class="dashboard-item-label">All Nurse</div>
-                </div>
-                <div class="dashboard-item">
-                    <div class="dashboard-item-number">0</div>
+                    <div class="dashboard-item-number">{{session('sessionCount')}}</div>
                     <div class="dashboard-item-label">Today Sessions</div>
                 </div>
             </div>
