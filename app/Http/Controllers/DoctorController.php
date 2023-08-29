@@ -10,7 +10,7 @@ class DoctorController extends Controller
     function showDashboard()
     {
         // select number of patient
-        $patientCount = DB::select('SELECT COUNT(id) as patientCount FROM users WHERE role = ? ', ['patient']);
+        $patientCount = DB::select('SELECT COUNT(id) as patientCount FROM inquiries WHERE doctor_id = ? ', [session('user')->id]);
         if (!empty($patientCount)) {
             session([
                 'patientCount' => $patientCount[0]->patientCount

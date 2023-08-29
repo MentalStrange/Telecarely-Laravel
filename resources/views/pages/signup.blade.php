@@ -1,5 +1,6 @@
 @extends('main-templete')
 @section('signup.css')
+    <title>Sign Up</title>
     <link rel="stylesheet" href="{{ asset('css/signup.css') }}">
 @endsection
 @section('content')

@@ -66,11 +66,11 @@ class UsersController extends Controller
 
         // check the validation of the data
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|min:4',
             'email' => 'required|email|unique:users', // check this you didn't make it yet.....
-            'password' => 'required|confirmed',
-            'age' => 'required',
-            'phone' => 'required'
+            'password' => 'required|confirmed|min:8',
+            'age' => 'required|numeric',
+            'phone' => 'required|numeric|min:11'
         ]);
         // insert data to db -> users
         DB::insert(
